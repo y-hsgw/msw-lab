@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GET_USERS_API_URL } from "./utils/url";
 
 interface User {
   id: number;
@@ -9,7 +10,7 @@ export const App: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(GET_USERS_API_URL)
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }, []);
