@@ -19,6 +19,11 @@ const config = {
     extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  devServer: {
+    static: "/dist",
+    open: true,
+    port: 3000,
+  },
 };
 
 export default config;
