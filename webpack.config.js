@@ -1,3 +1,4 @@
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 
 /**
@@ -5,18 +6,19 @@ import webpack from "webpack";
  */
 const config = {
   mode: "development",
-  entry: "./src/main.ts",
+  entry: "./src/index.tsx",
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         use: "ts-loader",
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".tsx", ".js"],
   },
+  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
 };
 
 export default config;
