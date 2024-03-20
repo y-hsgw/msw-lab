@@ -20,7 +20,9 @@ const config = {
   },
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
   devServer: {
-    static: "/dist",
+    static: {
+      directory: "./dist",
+    },
     open: true,
     port: 3000,
   },
